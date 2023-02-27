@@ -1,2 +1,2 @@
 # DeLaVille
- de la ville, chala, jose, dominguez and CAmilo
+ de la ville, Chala, Jose, Dominguez and Camilo
