@@ -1,0 +1,31 @@
+<div class="contact_section layout_padding">
+  <div class="container">
+      <h1 class="contact_taital">Danos tu info para contactarte</h1>
+      <form class="email_form" action="#" method="post">
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nombre" name="name" required>
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Teléfono" name="phone">
+          </div>
+          <div class="form-group">
+              <input type="email" class="form-control" placeholder="Email" name="email" required>
+          </div>
+          <div class="form-group">
+              <label for="motivo">Motivo de contacto:</label>
+              <select id="motivo" class="form-control" name="motivo">
+                  <option value="consulta">Consulta</option>
+                  <option value="solicitud">Solicitud de información</option>
+                  <option value="soporte">Soporte técnico</option>
+                  <option value="otro">Otro</option>
+              </select>
+          </div>
+          <div class="form-group">
+              <textarea class="form-control" placeholder="Mensaje" rows="5" id="mensaje" name="mensaje"></textarea>
+          </div>
+          <div class="form-group">
+              <input type="submit" class="submit_btn" value="Enviar">
+          </div>
+      </form>
+  </div>
+</div>
