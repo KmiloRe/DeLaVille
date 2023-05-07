@@ -31,6 +31,7 @@
       <link rel="stylesheet" href="css/owl.carousel.min.css">
       <link rel="stylesheet" href="css/owl.theme.default.min.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <script src="https://cdn.auth0.com/js/lock/11.35.1/lock.min.js"></script>
    </head>
    <body>
       <!-- header section start -->
@@ -64,6 +65,33 @@
                </nav>
             </div>
             <div class="container-fluid">
+               <button onclick='login()'>Log In</button>
+<button onclick='logout()'>Log Out</button>
+
+<!-- <script src="https://cdn.auth0.com/js/auth0/9.12.1/auth0.min.js">
+   const auth0 = new auth0.WebAuth({
+  clientID: 'py3MmzYYQsrkOOSB4xaf7WZWvffXrrvl',
+  domain: 'http://localhost',
+});
+
+function login() {
+  
+  auth0.authorize();
+}
+
+function logout() {
+  
+  auth0.logout({
+    returnTo: 'http://localhost:5000',  // Redirect URL after logout
+  });
+}</script> -->
+
+<script>function login() {
+  
+   console.log('holsssssssss')
+   auth0.authorize();
+ }</script>
+
                <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
                <div class="menu_main">
                   <ul>
@@ -132,5 +160,50 @@
       <!-- javascript --> 
       <script src="js/owl.carousel.js"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>    
+      <script src="https://cdn.auth0.com/js/auth0/9.12.1/auth0.min.js"></script>
+      
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script>
+         // Make a GET request
+         axios.get('http://127.0.0.1:5000/loginauth0')
+           .then(function (response) {
+             // Handle the response data
+             console.log(response.data);
+             //Asi se hace un display de un valor dado por la bd
+             //document.getElementById('Name_test').innerHTML=response.data
+            // window.alert(response.data);
+             //Aqui, funciona el window.alert
+             //Necesito que funcione afuera, o definir una variable con ese texto para tirarlo al front
+             //Y de una manera parecida mostrar datos de la bd
+           })
+           .catch(function (error) {
+             // Handle the error
+             console.log(error);
+           });
+       </script>
+       <script src="script.js"></script>
+       <!-- <script src="https://cdn.auth0.com/js/auth0/9.12.1/auth0.min.js">
+       const auth0 = new Auth0({
+         clientID: 'py3MmzYYQsrkOOSB4xaf7WZWvffXrrvl',
+         domain: 'http://localhost',
+       });
+       
+       function login() {
+         const auth0 = new auth0.WebAuth({
+         clientID: 'py3MmzYYQsrkOOSB4xaf7WZWvffXrrvl',
+         domain: 'http://localhost',
+       });
+         auth0.authorize();
+       }
+       
+       function logout() {
+         const auth0 = new Auth0({
+         clientID: 'py3MmzYYQsrkOOSB4xaf7WZWvffXrrvl',
+         domain: 'http://localhost',
+       });
+         auth0.logout({
+           returnTo: 'http://localhost:5000',  // Redirect URL after logout
+         });
+       }</script> -->
    </body>
 </html>
