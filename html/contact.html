@@ -82,6 +82,8 @@
       <div class="contact_section layout_padding">
         <div class="container">
           <h1 class="contact_taital">Danos tu info para contactarte</h1>
+          <!-- el id DEBE ser unico en toda la pagina -->
+          <span id = 'Name_test'>Aqui sale Nombre</span>
           <div class="email_text">
              <div class="form-group">
                 <input type="text" class="email-bt" placeholder="Name" name="Email">
@@ -146,10 +148,12 @@
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script>
          // Make a GET request
-         axios.get('http://127.0.0.1:5000/db_status')
+         axios.get('http://127.0.0.1:5000/readinfo')
            .then(function (response) {
              // Handle the response data
              console.log(response.data);
+             //Asi se hace un display de un valor dado por la bd
+             document.getElementById('Name_test').innerHTML=response.data
              window.alert(response.data);
              //Aqui, funciona el window.alert
              //Necesito que funcione afuera, o definir una variable con ese texto para tirarlo al front
@@ -162,11 +166,11 @@
        </script>
        
    </body>
-   <body>
+   <!-- <body>
       <h1>Hello World</h1>
       <script>
         //window.alert(response.data);
         window.alert("Aqui, info de BD");
       </script>
-    </body>
+    </body> -->
 </html>
