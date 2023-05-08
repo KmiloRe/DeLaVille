@@ -205,7 +205,7 @@
 
                      <div class="container">
                         <label for="uname"><b>Correo</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
+                        <input type="text" placeholder="Ingrese su Correo" name="uname" required>
 
                         <label for="psw"><b>Password</b></label>
                         <input type="password" placeholder="Enter Password" name="psw" required>
@@ -223,7 +223,6 @@
                   </form>
                   </div>
             </div>
-            <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
             <div>
                <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registro</button>
 
@@ -241,6 +240,9 @@
 
                         <label for="uname"><b>Nuevo Correo</b></label>
                         <input type="text" placeholder="Enter email" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
                         
                         <button type="submit" onclick="funcionRegistro(); return false;">Registro</button>
                         <label>
@@ -561,7 +563,7 @@
          }
        // Make a GET request
        console.log('functionlogin');
-       axios.post('http://127.0.0.1:5000/login',jsondata, {
+       axios.post('http://127.0.0.1:5000/newuser',jsondata, {
          headers:{
             "Content-Type": "application/json"
             //"Authorization": `Bearer ${token}`
