@@ -204,7 +204,7 @@
                      </div>
 
                      <div class="container">
-                        <label for="uname"><b>Username</b></label>
+                        <label for="uname"><b>Correo</b></label>
                         <input type="text" placeholder="Enter Username" name="uname" required>
 
                         <label for="psw"><b>Password</b></label>
@@ -213,6 +213,38 @@
                         <button type="submit" onclick="funcionLogin(); return false;">Login</button>
                         <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
+                        </label>
+                     </div>
+
+                     <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                     </div>
+                  </form>
+                  </div>
+            </div>
+            <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+            <div>
+               <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Registro</button>
+
+                  <div id="id02" class="modal">
+                  
+                  <form class="modal-content animate" id = 'inforegistro'>
+                     <div class="imgcontainer">
+                        <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="./images/logo.png" alt="Avatar" class="avatar">
+                     </div>
+
+                     <div class="container">
+                        <label for="useruser"><b>New Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="useruser" required>
+
+                        <label for="uname"><b>Nuevo Correo</b></label>
+                        <input type="text" placeholder="Enter email" name="uname" required>
+                        
+                        <button type="submit" onclick="funcionRegistro(); return false;">Registro</button>
+                        <label>
+                        <input type="checkbox" checked="checked" name="remember"> Recibir notificaciones
                         </label>
                      </div>
 
@@ -467,6 +499,7 @@
    <!--script src="./node_modules/axios/dist/axios.min.js"></script-->
    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!--Login-->
   <script>
    function funcionLogin(){
       var form = document.getElementById('infologin');
@@ -482,7 +515,7 @@
       headers:{
          "Content-Type": "application/json"
          //"Authorization": `Bearer ${token}`
-         
+
       }
     })
       .then(function (response) {
@@ -516,6 +549,44 @@
        }
    }
    </script>
+   <!--Registro-->
+   <script>
+      function funcionRegistro(){
+         var form = document.getElementById('inforegistro');
+         var formdata = new FormData(form);
+         var jsondata = {};
+   
+         for(const [key, value] of formdata.entries()){
+            jsondata[key] = value;
+         }
+       // Make a GET request
+       console.log('functionlogin');
+       axios.post('http://127.0.0.1:5000/login',jsondata, {
+         headers:{
+            "Content-Type": "application/json"
+            //"Authorization": `Bearer ${token}`
+         }
+       })
+         .then(function (response) {
+           // Handle the response data
+           //Guardar el access token en alguna variable accesible globalmente
+           //const token = response.data.access_token;
+   
+           // Set the token in Axios defaults for all subsequent requests
+           //Incluir el access token en todas las peticiones
+           //axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+           console.log(response.data);
+           window.alert(response.data);
+           //Aqui, funciona el window.alert
+           //Necesito que funcione afuera, o definir una variable con ese texto para tirarlo al front
+           //Y de una manera parecida mostrar datos de la bd
+         })
+         .catch(function (error) {
+           // Handle the error
+           console.log(error);
+         });
+      }
+     </script>
 
    
 </body>
