@@ -477,10 +477,12 @@
          jsondata[key] = value;
       }
     // Make a GET request
+    console.log('functionlogin');
     axios.post('http://127.0.0.1:5000/login',jsondata, {
       headers:{
-         "Content-Type": "application/json",
-         "Authorization": `Bearer ${token}`
+         "Content-Type": "application/json"
+         //"Authorization": `Bearer ${token}`
+         
       }
     })
       .then(function (response) {
