@@ -221,6 +221,52 @@ button {
     padding-bottom: 0px;
 }
 
+.userpassword_btn {
+    width: 790px;
+    margin: 10;
+    text-align: center;
+}
+
+.userpassword_btn a {
+    width: 790px;
+    float: right;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 30px;
+    background-color: #000000;
+    padding: 20px;
+    margin: 5px;
+}
+
+.userpassword_btn a:hover {
+    color: #ffffff;
+    background-color: #2b2278;
+}
+
+.userdatachange_btn {
+    width: 790px;
+    margin: 10;
+    text-align: center;
+}
+
+.userdatachange_btn a {
+    width: 790px;
+    float: right;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 30px;
+    background-color: #000000;
+    padding: 20px;
+    margin: 5px;
+}
+
+.userdatachange_btn a:hover {
+    color: #ffffff;
+    background-color: #2b2278;
+}
+
 .padding_0 {
     padding: 0px;
 }
