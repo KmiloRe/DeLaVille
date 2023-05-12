@@ -279,7 +279,9 @@
                      <h1 class="banner_taital">Explora - Descubre</h1>
                      <p class="banner_text">Cultura y conocimiento sobre todo lo que puedes hacer en el Valle del Aburra
                      </p>
-                     <div class="read_bt"><a href="#">Explorar</a></div>
+                     <div class="read_bt"><a href="recomienda.html">Explorar</a>
+                     </div>
+                     
                   </div>
                </div>
                <div class="carousel-item">
@@ -287,7 +289,7 @@
                      <h1 class="banner_taital">Que vas a hacer hoy?</h1>
                      <p class="banner_text">Restaurante?, conciertos?,discotecas?, tal vez un mirador?, quiza un museo,
                         esto y más en De L´Ville</p>
-                     <div class="read_bt"><a href="#">Obten la beta</a></div>
+                     <div class="read_bt"><a href="https://discord.com/channels/@me">Obten la beta</a></div>
                   </div>
                </div>
                <div class="carousel-item">
@@ -295,7 +297,7 @@
                      <h1 class="banner_taital">Aburrido?</h1>
                      <p class="banner_text">Busca una mayor afinidad acerca de tus gustos, conoce actividades nuevas
                         acorde a tus gustos</p>
-                     <div class="read_bt"><a href="#">Obten la beta</a></div>
+                     <div class="read_bt"><a href="recomienda.html">Explora</a></div>
                   </div>
                </div>
             </div>
@@ -580,6 +582,44 @@
            //axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
            console.log(response.data);
            window.alert(response.data);
+           //Aqui, funciona el window.alert
+           //Necesito que funcione afuera, o definir una variable con ese texto para tirarlo al front
+           //Y de una manera parecida mostrar datos de la bd
+         })
+         .catch(function (error) {
+           // Handle the error
+           console.log(error);
+         });
+      }
+     </script>
+     <script>
+      function funcionLucky(){
+         var form = document.getElementById('infolucky');
+         var formdata = new FormData(form);
+         var jsondata = {};
+   
+         for(const [key, value] of formdata.entries()){
+            jsondata[key] = value;
+         }
+       // Make a GET request
+       console.log('functionlucky');
+       axios.post('http://127.0.0.1:5000/lucky',jsondata, {
+         headers:{
+            "Content-Type": "application/json"
+            //"Authorization": `Bearer ${token}`
+   
+         }
+       })
+         .then(function (response) {
+           // Handle the response data
+           //Guardar el access token en alguna variable accesible globalmente
+           const token = response.data.access_token;
+   
+           // Set the token in Axios defaults for all subsequent requests
+           //Incluir el access token en todas las peticiones
+           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+           console.log(response.data);
+           window.alert(response.data.access_token);
            //Aqui, funciona el window.alert
            //Necesito que funcione afuera, o definir una variable con ese texto para tirarlo al front
            //Y de una manera parecida mostrar datos de la bd
