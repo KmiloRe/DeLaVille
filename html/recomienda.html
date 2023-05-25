@@ -144,14 +144,16 @@
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script>
          // Make a GET request
+         //Esto dentro de una función
          axios.get('http://127.0.0.1:5000/readimage')
            .then(function (response) {
              // Handle the response data
              console.log(response.data);
              //Asi se hace un display de un valor dado por la bd
              document.getElementById('Name_test').innerHTML=response.data.nombre
-             document.getElementById('Name_test2').innerHTML=response.data.nombre
+             document.getElementById('Name_test2').innerHTML=response.data.descripcion
              document.getElementById("dbimage").src = innerHTML=response.data.imagen; 
+             //document.getElementById('insta').innerHTML=response.data.instagram
              //console.log(innerHTML=response.data.imagen)
             // window.alert(response.data);
              //Aqui, funciona el window.alert
