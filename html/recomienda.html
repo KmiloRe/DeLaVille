@@ -77,6 +77,11 @@
             </div>
          </div>
       </div>
+      <div class="row">
+         <hr>
+         <div class="readmore_bt"><a href="recomienda.html">Cualquier chimbada</a></div>
+         <hr>
+      </div>
       <!-- header section end -->
       <!-- about section start -->
       <div class="about_section layout_padding">
@@ -88,6 +93,7 @@
                      <p class="about_text"><span id = 'Name_test2'>Descripción del lugar</span> </p>
                      <!-- <span id = 'Name_test'>Aqui sale Nombre</span> -->
                      <div class="readmore_bt"><a id = "insta"href="https://www.instagram.com/accounts/login/">Insta del lugar</a></div>
+                     
                   </div>
                </div>
                <div class="col-md-6 padding_right_0">
@@ -143,7 +149,31 @@
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>    
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <script>
-         // Make a GET request
+         // function randomreco(){
+         //    // Make a GET request
+         // //Esto dentro de una función
+         // axios.get('http://127.0.0.1:5000/readimage')
+         //   .then(function (response) {
+         //     // Handle the response data
+         //     console.log(response.data);
+         //     //Asi se hace un display de un valor dado por la bd
+         //     document.getElementById('Name_test').innerHTML=response.data.nombre
+         //     document.getElementById('Name_test2').innerHTML=response.data.descripcion
+         //     document.getElementById("dbimage").src = innerHTML=response.data.imagen; 
+         //     //document.getElementById('insta').innerHTML=response.data.instagram
+         //     //console.log(innerHTML=response.data.imagen)
+         //    // window.alert(response.data);
+         //     //Aqui, funciona el window.alert
+         //     //Necesito que funcione afuera, o definir una variable con ese texto para tirarlo al front
+         //     //Y de una manera parecida mostrar datos de la bd
+         //   })
+         //   .catch(function (error) {
+         //     // Handle the error
+         //     console.log(error);
+         //   });
+
+         // }
+      // Make a GET request
          //Esto dentro de una función
          axios.get('http://127.0.0.1:5000/readimage')
            .then(function (response) {
@@ -153,7 +183,7 @@
              document.getElementById('Name_test').innerHTML=response.data.nombre
              document.getElementById('Name_test2').innerHTML=response.data.descripcion
              document.getElementById("dbimage").src = innerHTML=response.data.imagen; 
-             //document.getElementById('insta').innerHTML=response.data.instagram
+            // document.getElementById('insta').innerHTML=response.data.instagram
              //console.log(innerHTML=response.data.imagen)
             // window.alert(response.data);
              //Aqui, funciona el window.alert
